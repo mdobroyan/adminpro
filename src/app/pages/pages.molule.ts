@@ -9,6 +9,7 @@ import { PAGES_ROUTES } from './pages.routes';
 import { IncrementadorComponent } from '../components/incrementador/incrementador.component';
 import { ChartsModule } from 'ng2-charts';
 import { GraficoDonaComponent } from '../components/grafico-dona/grafico-dona.component';
+import { AcountSettingComponent } from './acount-setting/acount-setting.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { GraficoDonaComponent } from '../components/grafico-dona/grafico-dona.co
         PagesComponent,
         Graficas1Component,
         IncrementadorComponent,
-        GraficoDonaComponent
+        GraficoDonaComponent,
+        AcountSettingComponent
     ],
     exports: [
         DashboardComponent,
