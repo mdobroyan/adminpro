@@ -4,8 +4,8 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { APP_ROUTES } from './app.routes';
 import { RegisterComponent } from './login/register.component';
-import { PagesModule } from './pages/pages.molule';
-import { FormsModule } from '@angular/forms';
+import { PagesModule } from './pages/pages.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { GraficoDonaComponent } from './components/grafico-dona/grafico-dona.component';
 import { ServiceModule } from './services/service.module';
 
@@ -21,7 +21,8 @@ import { ServiceModule } from './services/service.module';
     APP_ROUTES,
     PagesModule,
     FormsModule,
-    ServiceModule
+    ServiceModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -10,6 +10,8 @@ import { IncrementadorComponent } from '../components/incrementador/incrementado
 import { ChartsModule } from 'ng2-charts';
 import { GraficoDonaComponent } from '../components/grafico-dona/grafico-dona.component';
 import { AcountSettingComponent } from './acount-setting/acount-setting.component';
+import { PromesasComponent } from './promesas/promesas.component';
+import { RxjsComponent } from './rxjs/rxjs.component';
 
 
 @NgModule({
@@ -21,13 +23,17 @@ import { AcountSettingComponent } from './acount-setting/acount-setting.componen
         Graficas1Component,
         IncrementadorComponent,
         GraficoDonaComponent,
-        AcountSettingComponent
+        AcountSettingComponent,
+        PromesasComponent,
+        RxjsComponent
     ],
     exports: [
         DashboardComponent,
         ProgressComponent,
         PagesComponent,
         Graficas1Component
+        
+       
     ],
     imports:[
         SharedModule,
