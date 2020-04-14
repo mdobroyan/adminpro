@@ -83,7 +83,10 @@ export class UsuarioService {
 
     return this.http.put<any>(url, usuario).pipe(map((resp: any) => {
 
-      this.guardarStorage(resp.usuario._id,this.token,resp.usuario)
+      if(usuario._id===this.usuario._id){
+        this.guardarStorage(resp.usuario._id,this.token,resp.usuario)
+      
+      }
       Swal.fire('Usuario actualizado', usuario.email, 'success');
       return true;
     }));
@@ -132,6 +135,22 @@ export class UsuarioService {
 
   }
 
+  buscarUsuarios(keys:string){
+
+    let url = URL_SERVICIOS + '/busqueda/coleccion/usuarios/'+keys;
+    return this.http.get(url);
+
+
+  }
+
+  cargarUsuarios(desde:number=0){
+
+    let url = URL_SERVICIOS + '/usuario?desde='+desde;
+
+    return this.http.get(url);
+
+  }
+
 
   cambiarImagen(imagenSubir:File,id:string){
 
@@ -152,6 +171,22 @@ export class UsuarioService {
    });
   }
 
+  borrarUsuario(id:string){
+    let url = URL_SERVICIOS + '/usuario/'+id;
+    url+='?token='+this.token;
+
+    return this.http.delete(url).pipe(map(resp=>{
+
+      Swal.fire(
+        'Deleted!',
+        'Your file has been deleted.',
+        'success'
+      );
+
+      return true;
+    }));
+
+  }
 
 
 }
